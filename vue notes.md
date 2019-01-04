@@ -168,10 +168,63 @@
 	v-bind:简写：，绑定Dom属性
 	v-model:在表单控件上双向绑定
 	v-pre:跳过这个元素和它的子元素的编译过程
-	v-cloak:<div v-cloak>{{ message }}</div>这个指令保持在元素上直到关联实例结束编译
+	v-cloak:<div v-cloak>{{ message }}</div>这个指令保持在元素上直到关联实例结束编译 防止闪现, 与 css 配合:[v-cloak]{display:none}
 	v-once:只渲染元素和组件一次
+	$ref:指定唯一标识,vue 对象通过$refs 属性访问这个元素对象 
 	
+30.自定义指令
+	<div v-upper-text="msg">{{msg}}</div>
+	<div v-lower-text="msg">{{msg}}</div>
+	注册全局指令：
+		Vue.directive('upper-text',function(el,binding){
+			el.innerHTML= binding.value.toUpperCase()
+		}
+	注册局部指令：
+		directives:{
+			'lower-text':function(el,binding){
+				el.innerHTML= binding.value.toLowerCase()
+			}
+		}
+
+31.创建vue项目
+
+	npm install -g vue-cli
+	vue init webpack vueProjectname
+	cd vueProjectname
+	npm install 
+	npm run dev
+	访问：http://localhost:8080/
+
+32.模板项目结构
 	
+	|--build:webpack 相关的配置文件夹(基本不需要修改) 
+	|--dev-server.js: 通过 express 启动后台服务器 
+	|--config:webpack 相关的配置文件夹(基本不需要修改) 
+	|--index.js: 指定的后台服务的端口号和静态资源文件夹 
+	|--node_modules 
+	|--src: 源码文件夹 
+	|--components:vue 组件及其相关资源文件夹 
+	|--App.vue: 应用根主组件 
+	|--main.js: 应用入口 js 
+	|--static: 静态资源文件夹 
+	|--.babelrc:babel 的配置文件 
+	|--.eslintignore:eslint 检查忽略的配置 |--.eslintrc.js:eslint 检查的配置 
+	|--.gitignore:git 版本管制忽略的配置 
+	|--index.html: 主页面文件 
+	|--package.json: 应用包配置文件 
+	|--README.md: 应用描述说明的 readme 文件
+
+33、项目打包和发布
+	
+	1.打包：npm run build
+	2.发布：npm install -g serve
+	3.访问：http://localhost:5000
+
+34.组件使用
+
+	1.引入组件  import List from ''
+	2.映射成标签：components:{}
+	3.使用<List></List>
 	
 
 
