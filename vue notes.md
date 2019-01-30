@@ -226,6 +226,18 @@
 	2.映射成标签：components:{}
 	3.使用<List></List>
 	
+35、数据代理
+	
+	数据代理是通过一个对象代理（A)对另一个对象（B,B在A中）中属性的操作
+
+36、vue数据代理
+
+	通过MVVM对象代理data对象中所有属性的操作
+	基本流程：
+		通过Object.defineProperty()给VM添加与data对象的属性相对应的属性描述符
+		所有添加的属性都包含getter/setter
+		getter/setter内部去操作data中对象属性数据
+
 
 
 

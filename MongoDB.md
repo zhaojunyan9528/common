@@ -17,7 +17,7 @@ MongoDB非关系数据库、键值对数据、文档型数据库、快速开发
 	32位电脑第一次启动时：mongod --storageEngine==mmapv1
 	可以通过mongod --dbpath url(启动指定数据库路径)
 	默认端口27017
-	指定端口号mongod --dbpath url(启动指定数据库路径) --port 1234
+	指定端口号mongod --dbpath url(启动指定数据库路径c:\data\db) --port 1234
 
 5.再打开cmd窗口
 
