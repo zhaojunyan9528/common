@@ -6,7 +6,7 @@
 
 3.初始化项目
 
-	命令行：npm init webpack yourProjectname
+	命令行：vue init webpack yourProjectname
 	进入项目yourProjectname: cd yourProjectname
 	安装vue：npm install
 
